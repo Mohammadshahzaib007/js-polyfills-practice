@@ -7,5 +7,5 @@ Array.prototype.myForEach = function (callback, thisArg) {
 };
 
 module.exports = {
-  forEachPolyfill: Array.prototype.forEach,
+  forEachPolyfill: Array.prototype.myForEach,
 };
