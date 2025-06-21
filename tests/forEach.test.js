@@ -1,5 +1,4 @@
 const { forEachPolyfill } = require("../src/polyfills/forEach");
-// const forEachPolyfill = Array.prototype.forEach;
 
 describe("forEachPolyfill", () => {
   test("calls callback for each element in the array", () => {
