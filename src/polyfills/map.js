@@ -1,9 +1,23 @@
-function mapPolyfill(cb, thisArg) {
-  for (let i = 0; i < this.length; i++) {}
-}
+Array.prototype.mapPolyfill = function (cb, thisArg) {
+  if (typeof cb !== "function") {
+    throw new Error(`${typeof cb} ${cb} is not a function`);
+  }
 
-module.exports = {
-  mapPolyfill: mapPolyfill,
+  if (this == null || this === undefined) {
+    throw new TypeError(
+      "Array.prototype.mapPolyfill called on null or undefined"
+    );
+  }
+
+  let result = [];
+  for (let i = 0; i < this.length; i++) {
+    if (this.hasOwnProperty(i)) {
+      result[i] = cb.call(thisArg, this[i], i, this);
+    }
+  }
+  return result;
 };
 
-[1, 2, 3].map((x) => x * 2);
+module.exports = {
+  mapPolyfill: Array.prototype.map,
+};
