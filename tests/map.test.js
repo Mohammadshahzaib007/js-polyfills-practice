@@ -1,41 +1,88 @@
-// map.test.js
-
 const { mapPolyfill } = require("../src/polyfills/map");
 
 describe("mapPolyfill", () => {
-  test("applies callback to each element and returns new array", () => {
-    const result = mapPolyfill.call([1, 2, 3], (x) => x * 2);
+  test("should map over array and return correct values", () => {
+    const arr = [1, 2, 3];
+    const result = mapPolyfill.call(arr, (num) => num * 2);
     expect(result).toEqual([2, 4, 6]);
   });
 
-  test("does not mutate the original array", () => {
+  test("should pass index and array as arguments", () => {
+    const arr = [10, 20, 30];
+    const indexes = [];
+    const arrays = [];
+
+    const result = mapPolyfill.call(arr, (value, index, array) => {
+      indexes.push(index);
+      arrays.push(array);
+      return value;
+    });
+
+    expect(indexes).toEqual([0, 1, 2]);
+    expect(arrays[0]).toBe(arr);
+    expect(arrays[1]).toBe(arr);
+    expect(result).toEqual(arr);
+  });
+
+  test("should respect thisArg", () => {
+    const context = { multiplier: 3 };
     const arr = [1, 2, 3];
-    mapPolyfill.call(arr, (x) => x + 1);
-    expect(arr).toEqual([1, 2, 3]);
-  });
 
-  test("passes value, index, and array to callback", () => {
-    const mockFn = jest.fn((x) => x);
-    const arr = [5, 10];
-    mapPolyfill.call(arr, mockFn);
-    expect(mockFn).toHaveBeenCalledWith(5, 0, arr);
-    expect(mockFn).toHaveBeenCalledWith(10, 1, arr);
-  });
-
-  test("respects thisArg inside callback", () => {
-    const context = { base: 10 };
     const result = mapPolyfill.call(
-      [1, 2],
-      function (val) {
-        return val + this.base;
+      arr,
+      function (num) {
+        return num * this.multiplier;
       },
       context
     );
-    expect(result).toEqual([11, 12]);
+
+    expect(result).toEqual([3, 6, 9]);
   });
 
-  test("returns empty array if input is empty", () => {
-    const result = mapPolyfill.call([], (x) => x * 2);
+  test("should not mutate the original array", () => {
+    const arr = [1, 2, 3];
+    const copy = [...arr];
+
+    mapPolyfill.call(arr, (x) => x * 10);
+    expect(arr).toEqual(copy);
+  });
+
+  test("should return empty array for empty input", () => {
+    const arr = [];
+    const result = mapPolyfill.call(arr, (x) => x * 2);
     expect(result).toEqual([]);
+  });
+
+  test("should skip holes in sparse arrays", () => {
+    const sparse = [1, , 3]; // hole at index 1
+    const result = mapPolyfill.call(sparse, (v) => v * 2);
+    expect(result).toEqual([2, , 6]); // hole preserved
+    expect(1 in result).toBe(false); // still a hole
+  });
+
+  test("should support mapping undefined values", () => {
+    const arr = [undefined, null, 0];
+    const result = mapPolyfill.call(arr, (v) =>
+      v === undefined ? "undef" : v
+    );
+    expect(result).toEqual(["undef", null, 0]);
+  });
+
+  test("should work with array-like objects", () => {
+    const arrayLike = {
+      0: "a",
+      1: "b",
+      length: 2,
+      hasOwnProperty: Object.prototype.hasOwnProperty,
+    };
+
+    const result = mapPolyfill.call(arrayLike, (v) => v.toUpperCase());
+    expect(result).toEqual(["A", "B"]);
+  });
+
+  test("should return new array instance", () => {
+    const arr = [1, 2, 3];
+    const result = mapPolyfill.call(arr, (x) => x);
+    expect(result).not.toBe(arr);
   });
 });
