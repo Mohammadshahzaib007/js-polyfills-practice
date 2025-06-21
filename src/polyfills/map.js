@@ -3,7 +3,7 @@ Array.prototype.mapPolyfill = function (cb, thisArg) {
     throw new Error(`${typeof cb} ${cb} is not a function`);
   }
 
-  if (this == null || this === undefined) {
+  if (this === null || this === undefined) {
     throw new TypeError(
       "Array.prototype.mapPolyfill called on null or undefined"
     );
