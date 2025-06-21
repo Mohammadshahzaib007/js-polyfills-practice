@@ -33,17 +33,6 @@ npm install
 npm test
 ```
 
-**Folder Structure**
-.
-├── node_modules
-├── polyfills/
-│ └── forEach.js
-├── tests/
-│ └── forEach.test.js
-├── jest.config.js
-├── package.json
-└── README.md
-
 **📝 Notes**
 Each polyfill is implemented in its own file.
 
