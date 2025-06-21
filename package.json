@@ -1,0 +1,14 @@
+{
+  "name": "polyfills",
+  "version": "1.0.0",
+  "description": "This is for learning purpose",
+  "main": "promise.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Mohammad Shahzaib",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^30.0.2"
+  }
+}
