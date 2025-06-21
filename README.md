@@ -8,6 +8,7 @@ A personal project to implement and test common JavaScript polyfills from scratc
 | ------------------------- | ------ |
 | `Array.prototype.forEach` | ✅     |
 | `Array.prototype.map`     | ✅     |
+| `Array.prototype.filter`  |        |
 
 ## 📦 Tech Stack
 
