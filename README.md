@@ -10,7 +10,8 @@ A personal project to implement and test common JavaScript polyfills from scratc
 | `Array.prototype.map`     | ✅     |
 | `Array.prototype.filter`  | ✅     |
 | `Array.prototype.find`    | ✅     |
-| `Array.prototype.every`   |        |
+| `Array.prototype.every`   | ✅     |
+| `Array.prototype.some`    |        |
 
 ## 📦 Tech Stack
 
