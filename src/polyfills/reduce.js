@@ -1,4 +1,4 @@
-Array.prototype.reducePolyfill = function (cb, initialValue, thisArg) {
+Array.prototype.reducePolyfill = function (cb, initialValue) {
   "use strict";
   if (this === null || this === undefined) {
     throw new TypeError(
@@ -23,7 +23,7 @@ Array.prototype.reducePolyfill = function (cb, initialValue, thisArg) {
   }
   while (i < length) {
     if (this.hasOwnProperty(i)) {
-      result = cb.call(thisArg, result, this[i], i, this);
+      result = cb(result, this[i], i, this);
     }
     i++;
   }
