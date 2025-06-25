@@ -1,13 +1,13 @@
 Array.prototype.somePolyfill = function (cb, thisArgs) {
   "use strict";
-  if (typeof cb !== "function") {
-    throw new TypeError(`${typeof cb} ${cb} is not a function`);
-  }
-
   if (this === null || this === undefined) {
     throw new TypeError(
       "Array.prototype.somePolyfill can not call on null or undefined"
     );
+  }
+
+  if (typeof cb !== "function") {
+    throw new TypeError(`${typeof cb} ${cb} is not a function`);
   }
 
   const length = this.length;
@@ -15,9 +15,8 @@ Array.prototype.somePolyfill = function (cb, thisArgs) {
   let result = false;
   while (i < length) {
     if (this.hasOwnProperty(i)) {
-      const r = cb.call(thisArgs, this[i], i, this);
-      if (r) {
-        result = r;
+      if (cb.call(thisArgs, this[i], i, this)) {
+        result = true;
         break;
       }
     }
