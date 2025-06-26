@@ -21,6 +21,12 @@ Array.prototype.reducePolyfill = function (cb, initialValue) {
     result = this[i];
     i++;
   }
+
+  // if initialvalue is not provided, and the arrays' initial elements have empty slots
+  while (!result && !initialValue && initialValue !== 0 && i < length) {
+    i++;
+  }
+
   while (i < length) {
     if (this.hasOwnProperty(i)) {
       result = cb(result, this[i], i, this);
