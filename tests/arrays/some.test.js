@@ -1,4 +1,4 @@
-const { somePolyfill } = require("../src/polyfills/some");
+const { somePolyfill } = require("../../src/polyfills/arrays/some");
 
 beforeAll(() => {
   Array.prototype.mySome = somePolyfill;

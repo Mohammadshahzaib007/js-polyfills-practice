@@ -1,4 +1,4 @@
-const { filterPolyfill } = require("../src/polyfills/filter");
+const { filterPolyfill } = require("../../src/polyfills/arrays/filter");
 
 describe("filterPolyfill", () => {
   beforeAll(() => {

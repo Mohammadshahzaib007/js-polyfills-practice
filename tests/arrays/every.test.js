@@ -1,4 +1,4 @@
-const { everyPolyfill } = require("../src/polyfills/every");
+const { everyPolyfill } = require("../../src/polyfills/arrays/every");
 
 describe("Array.prototype.everyPolyfill", () => {
   beforeAll(() => {

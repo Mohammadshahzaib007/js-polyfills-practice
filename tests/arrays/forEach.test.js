@@ -1,4 +1,4 @@
-const { forEachPolyfill } = require("../src/polyfills/forEach");
+const { forEachPolyfill } = require("../../src/polyfills/arrays/forEach");
 
 describe("forEachPolyfill", () => {
   test("calls callback for each element in the array", () => {

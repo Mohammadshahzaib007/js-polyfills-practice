@@ -1,4 +1,4 @@
-const { findPolyfill } = require("../src/polyfills/find");
+const { findPolyfill } = require("../../src/polyfills/arrays/find");
 
 describe("findPolyfill", () => {
   beforeAll(() => {

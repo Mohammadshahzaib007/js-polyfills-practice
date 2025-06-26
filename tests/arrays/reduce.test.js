@@ -1,4 +1,4 @@
-const { reducePolyfill } = require("../src/polyfills/reduce");
+const { reducePolyfill } = require("../../src/polyfills/arrays/reduce");
 
 beforeAll(() => {
   Array.prototype.myReduce = reducePolyfill;

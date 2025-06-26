@@ -1,4 +1,4 @@
-const { mapPolyfill } = require("../src/polyfills/map");
+const { mapPolyfill } = require("../../src/polyfills/arrays/map");
 
 describe("mapPolyfill", () => {
   test("should map over array and return correct values", () => {

@@ -1,4 +1,4 @@
-const { flatPolyfill } = require("../src/polyfills/flat.js");
+const { flatPolyfill } = require("../../src/polyfills/arrays/flat.js");
 
 beforeAll(() => {
   Array.prototype.myFlat = flatPolyfill;
