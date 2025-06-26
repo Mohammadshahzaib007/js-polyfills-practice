@@ -13,7 +13,7 @@ A personal project to implement and test common JavaScript polyfills from scratc
 | `Array.prototype.every`   | ✅     |
 | `Array.prototype.some`    | ✅     |
 | `Array.prototype.reduce`  | ✅     |
-| `Array.prototype.flat`    |        |
+| `Array.prototype.flat`    | ✅     |
 
 ## 📦 Tech Stack
 
