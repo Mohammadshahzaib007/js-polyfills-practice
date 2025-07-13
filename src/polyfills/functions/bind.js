@@ -102,7 +102,8 @@ Function.prototype.bindPolyfill = function (context, ...args) {
   if (originalFn.prototype) {
     // Create a new object whose prototype is `originalFn.prototype`.
     // This new object becomes the prototype of `boundFn`.
-    boundFn.prototype = Object.create(originalFn.prototype);
+    boundFn.prototype = Object.create(originalFn.prototype); //Object.create gives you the right prototype chain but doesn’t copy .constructor
+    // new boundFn() --> boundFn.prototype --> originalFn.prototype
 
     // Crucial: Restore the `constructor` property of `boundFn.prototype`.
     // `Object.create()` does not automatically set the `constructor` property.
