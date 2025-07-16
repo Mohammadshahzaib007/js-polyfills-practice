@@ -7,7 +7,6 @@ A personal project to implement and test common JavaScript polyfills from scratc
 | Method                         | Status |
 | ------------------------------ | ------ |
 | Arrays                         |        |
-| --------------------------     | ------ |
 | `Array.prototype.forEach`      | ✅     |
 | `Array.prototype.map`          | ✅     |
 | `Array.prototype.filter`       | ✅     |
@@ -17,12 +16,10 @@ A personal project to implement and test common JavaScript polyfills from scratc
 | `Array.prototype.reduce`       | ✅     |
 | `Array.prototype.flat`         | ✅     |
 | Functions                      |        |
-| --------------------------     | ------ |
 | `Function.prototype.bind`      | ✅     |
 | `Function.prototype.call`      | ✅     |
 | `Function.prototype.apply`     | ✅     |
 | Objects                        |        |
-| --------------------------     | ------ |
 | `Object.prototype.create`      |        |
 | `Object.prototype.assign`      |        |
 | `Object.prototype.entries`     |        |
