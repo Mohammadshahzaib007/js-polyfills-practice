@@ -16,7 +16,7 @@ A personal project to implement and test common JavaScript polyfills from scratc
 | `Array.prototype.flat`     | ✅     |
 | `Function.prototype.bind`  | ✅     |
 | `Function.prototype.call`  | ✅     |
-| `Function.prototype.apply` |        |
+| `Function.prototype.apply` | ✅     |
 
 ## 📦 Tech Stack
 
