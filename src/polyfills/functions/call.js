@@ -5,13 +5,15 @@ Function.prototype.callPolyfill = function (thisArg, ...args) {
     );
   }
 
-  let context = thisArg || globalThis;
+  let context =
+    thisArg === null || thisArg === undefined ? globalThis : thisArg;
 
   if (typeof thisArg === "number") {
     context = new Number(thisArg);
-  }
-  if (typeof thisArg === "string") {
+  } else if (typeof thisArg === "string") {
     context = new String(thisArg);
+  } else if (typeof thisArg === "boolean") {
+    context = new Boolean(thisArg);
   }
   const key = Symbol("temp_key");
   context[key] = this;
