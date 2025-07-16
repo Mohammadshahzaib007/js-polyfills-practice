@@ -43,6 +43,12 @@ npm install
 npm test
 ```
 
+For running a specific test file run this command 👇
+
+```
+npx jest file_name
+```
+
 **📝 Notes**
 Each polyfill is implemented in its own file.
 
