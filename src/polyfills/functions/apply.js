@@ -16,6 +16,7 @@ Function.prototype.applyPolyfill = function (thisArg, args) {
     context = new Boolean(thisArg);
   }
 
+  args = args == null ? [] : args;
   const key = Symbol("temp_key");
   context[key] = this;
   const result = context[key](...args);
