@@ -1,7 +1,7 @@
 Function.prototype.applyPolyfill = function (thisArg, args) {
   if (typeof this !== "function") {
     throw new TypeError(
-      "Fuction.prototype.applyPolyfill can only be called on functions"
+      "Function.prototype.applyPolyfill can only be called on functions"
     );
   }
 
