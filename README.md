@@ -4,27 +4,21 @@ A personal project to implement and test common JavaScript polyfills from scratc
 
 ## ✅ Completed Polyfills
 
-| Method                         | Status |
-| ------------------------------ | ------ |
-| Arrays                         |        |
-| `Array.prototype.forEach`      | ✅     |
-| `Array.prototype.map`          | ✅     |
-| `Array.prototype.filter`       | ✅     |
-| `Array.prototype.find`         | ✅     |
-| `Array.prototype.every`        | ✅     |
-| `Array.prototype.some`         | ✅     |
-| `Array.prototype.reduce`       | ✅     |
-| `Array.prototype.flat`         | ✅     |
-| Functions                      |        |
-| `Function.prototype.bind`      | ✅     |
-| `Function.prototype.call`      | ✅     |
-| `Function.prototype.apply`     | ✅     |
-| Objects                        |        |
-| `Object.prototype.create`      |        |
-| `Object.prototype.assign`      |        |
-| `Object.prototype.entries`     |        |
-| `Object.prototype.fromEntries` |        |
-| `Object.prototype.values`      |        |
+| Method                     | Status |
+| -------------------------- | ------ |
+| Arrays                     |        |
+| `Array.prototype.forEach`  | ✅     |
+| `Array.prototype.map`      | ✅     |
+| `Array.prototype.filter`   | ✅     |
+| `Array.prototype.find`     | ✅     |
+| `Array.prototype.every`    | ✅     |
+| `Array.prototype.some`     | ✅     |
+| `Array.prototype.reduce`   | ✅     |
+| `Array.prototype.flat`     | ✅     |
+| Functions                  |        |
+| `Function.prototype.bind`  | ✅     |
+| `Function.prototype.call`  | ✅     |
+| `Function.prototype.apply` | ✅     |
 
 ## 📦 Tech Stack
 
