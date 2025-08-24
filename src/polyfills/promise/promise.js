@@ -100,6 +100,28 @@ class PromisePolyfill {
   catch(rejectionHandler) {
     return this.then(null, rejectionHandler);
   }
+
+  finally(onFinally) {
+    return this.then(
+      (value) => PromisePolyfill.resolve(onFinally()).then(() => value),
+      (reason) =>
+        PromisePolyfill.resolve(onFinally()).then(() => {
+          throw reason;
+        })
+    );
+  }
+
+  static resolve(value) {
+    if (value instanceof PromisePolyfill) {
+      return value;
+    }
+
+    return new PromisePolyfill((resolve) => resolve(value));
+  }
+
+  static reject(reason) {
+    return new PromisePolyfill((resolve, reject) => reject(reason));
+  }
 }
 
 module.exports = {
